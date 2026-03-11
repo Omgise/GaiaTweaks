@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.common.item;
+package henrykado.gaiablossom.common.item.unused;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;

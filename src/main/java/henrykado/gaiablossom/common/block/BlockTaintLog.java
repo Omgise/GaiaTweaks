@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.Thaumcraft;
@@ -16,16 +15,13 @@ public class BlockTaintLog extends BlockRotatedPillar {
 
     public BlockTaintLog() {
         super(Material.wood);
-        String name = "log_taintwood";
-
-        setBlockName(name);
-        setBlockTextureName("gaiablossom:" + name);
-        GameRegistry.registerBlock(this, name);
 
         this.setHardness(1.5F);
         this.setStepSound(new CustomSoundType("gore", 0.5F, 0.8F));
         this.setCreativeTab(Thaumcraft.tabTC);
         this.setTickRandomly(true);
+
+        ModBlock.registerBlock(this, "log_taintwood");
     }
 
     @SideOnly(Side.CLIENT)
@@ -43,9 +39,9 @@ public class BlockTaintLog extends BlockRotatedPillar {
         if (id == 1) {
             if (world.isRemote) {
                 world.playSound(
-                    (double) x,
-                    (double) y,
-                    (double) z,
+                    x,
+                    y,
+                    z,
                     "thaumcraft:roots",
                     0.1F,
                     0.9F + world.rand.nextFloat() * 0.2F,

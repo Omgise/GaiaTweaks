@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.event;
+package henrykado.gaiablossom.common.event;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

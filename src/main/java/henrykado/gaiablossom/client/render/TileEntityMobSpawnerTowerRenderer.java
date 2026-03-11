@@ -7,8 +7,8 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
-import henrykado.gaiablossom.common.block.tile.MobSpawnerTowerLogic;
-import henrykado.gaiablossom.common.block.tile.TileEntityMobSpawnerTower;
+import henrykado.gaiablossom.common.block.tileentity.MobSpawnerTowerLogic;
+import henrykado.gaiablossom.common.block.tileentity.TileEntityMobSpawnerTower;
 
 public class TileEntityMobSpawnerTowerRenderer extends TileEntitySpecialRenderer {
 

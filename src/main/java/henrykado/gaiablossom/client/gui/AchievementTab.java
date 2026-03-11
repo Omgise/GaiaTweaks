@@ -25,9 +25,7 @@ public class AchievementTab extends GuiButton {
         super(0, 0, 0, 28, 32, "");
     }
 
-    ResourceLocation texture = new ResourceLocation("gaiablossom", "textures/gui/tab.png");
-    ItemStack renderStack = new ItemStack(Blocks.grass);
-    RenderItem itemRenderer = new RenderItem();
+    ResourceLocation texture = new ResourceLocation("gaiablossom", "textures/gui/achievementsTab.png");
 
     @Override
     public void drawButton(Minecraft mc, int mouseX, int mouseY) {

@@ -14,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import vazkii.botania.common.world.WorldTypeSkyblock;
+
 @Mixin(value = BlockCrops.class, remap = false)
 public abstract class MixinBlockCrops extends BlockBush {
 
@@ -24,6 +26,10 @@ public abstract class MixinBlockCrops extends BlockBush {
     public void getDropsInject(World world, int x, int y, int z, int metadata, int fortune,
         CallbackInfoReturnable<ArrayList<ItemStack>> cir) {
         ArrayList<ItemStack> ret = super.getDrops(world, x, y, z, metadata, fortune);
+
+        if (WorldTypeSkyblock.isWorldSkyblock(world)) {
+            cir.setReturnValue(ret);
+        }
 
         if (metadata >= 7) {
             ret.add(new ItemStack(this.func_149866_i(), 1, 0));

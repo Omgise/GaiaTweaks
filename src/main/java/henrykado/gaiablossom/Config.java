@@ -27,6 +27,7 @@ public class Config {
     public static boolean renderSkeletonChargingBow = true;
     public static int animalTemptDelay = 30;
     public static boolean enableSwordParry = true;
+    public static int swordParryWindow = 3;
     public static boolean disableVillages = false;
     public static boolean enableFasterLadders = true;
     public static boolean itemFrame45Degrees = true;
@@ -36,6 +37,8 @@ public class Config {
     public static boolean reversalStairRecipe = true;
     public static boolean reversalSlabRecipe = true;
     public static boolean undergroundBiomes = true;
+    public static boolean autumnForest = false;
+    public static int autumnForestBiomeID = 40;
 
     public static boolean slowerCropGrowth = false;
     public static boolean enableStaminaSystem = false;
@@ -85,6 +88,7 @@ public class Config {
     public static boolean thaumometerIgnoresItemFrame = true;
     public static boolean overworldOnlyGreatwood = true;
     public static boolean removeHarnessModel = false;
+    public static boolean customTwilightForestModels = false;
     public static boolean infernalFurnaceSteel = true;
     public static String[] greatwoodBiomeIDBlacklist = { "29" };
 
@@ -116,6 +120,14 @@ public class Config {
             Configuration.CATEGORY_GENERAL,
             true,
             "Enables the sword parry mechanic (blocking right when a projectile hits you)");
+
+        swordParryWindow = configuration.getInt(
+            "swordParryWindow",
+            Configuration.CATEGORY_GENERAL,
+            3,
+            -1,
+            Integer.MAX_VALUE,
+            "The amount of ticks after blocking that sword parrying is possible.\nSet to -1 to always parry when blocking.");
 
         enableFasterLadders = configuration.getBoolean(
             "enableFasterLadders",
@@ -173,6 +185,26 @@ public class Config {
             "Allows you to turn 4 stairs into ");
 
         reversalSlabRecipe = configuration.getBoolean("reversalSlabRecipe", Configuration.CATEGORY_GENERAL, true, "");
+
+        undergroundBiomes = configuration.getBoolean(
+            "undergroundBiomes",
+            Configuration.CATEGORY_GENERAL,
+            true,
+            "Master toggle for 1.12 Quark's underground biomes.");
+
+        autumnForest = configuration.getBoolean(
+            "autumnForest",
+            Configuration.CATEGORY_GENERAL,
+            false,
+            "Adds the Autumnal Forest, a new autumn-themed biome");
+
+        autumnForestBiomeID = configuration.getInt(
+            Configuration.CATEGORY_GENERAL,
+            "autumnForestBiomeID",
+            40,
+            0,
+            Integer.MAX_VALUE,
+            "");
 
         enableStaminaSystem = configuration
             .getBoolean("enableStaminaSystem", "hunger", false, "Enables the new stamina system");
@@ -343,7 +375,17 @@ public class Config {
             "Limits greatwood tree generation to the overworld");
 
         removeHarnessModel = configuration
-            .getBoolean("removeHarnessModel", "thaumcraft", false, "Removes the Thaumostatic Harness' .obj model");
+            .getBoolean(
+                "removeHarnessModel",
+                "thaumcraft",
+                false,
+                "Removes the Thaumostatic Harness' .obj model (the non-square one)");
+
+        customTwilightForestModels = configuration.getBoolean(
+            "customTwilightForestModels",
+            "twilightforest",
+            false,
+            "Changes the Wild Deer and Bighorn Sheep's models to better match vanilla's artsyle.");
 
         infernalFurnaceSteel = configuration.getBoolean(
             "infernalFurnaceSteel",
@@ -417,7 +459,13 @@ public class Config {
                 "swampSlime");
         }
 
-        addUndergroundBiome(configuration, new UndergroundBiomeLush(), BiomeDictionary.Type.JUNGLE, 8, 22, "jungle");
+        addUndergroundBiome(
+            configuration,
+            new UndergroundBiomeLush(),
+            BiomeDictionary.Type.JUNGLE,
+            8,
+            22,
+            "jungle");
 
         addUndergroundBiome(
             configuration,
@@ -435,7 +483,13 @@ public class Config {
             16,
             "plainsSpider");
 
-        addUndergroundBiome(configuration, new UndergroundBiomeIcy(), BiomeDictionary.Type.SNOWY, 15, 26, "icyCave");
+        addUndergroundBiome(
+            configuration,
+            new UndergroundBiomeIcy(),
+            BiomeDictionary.Type.SNOWY,
+            15,
+            14,
+            "icyCave");
 
         if (configuration.hasChanged()) {
             configuration.save();

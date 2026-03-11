@@ -1,5 +1,6 @@
-package henrykado.gaiablossom.common.item;
+package henrykado.gaiablossom.common.item.unused;
 
+import henrykado.gaiablossom.common.item.ModItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAir;
 import net.minecraft.entity.player.EntityPlayer;

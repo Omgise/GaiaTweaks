@@ -5,8 +5,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import henrykado.gaiablossom.common.block.tile.TileEntityMobSpawnerTower;
+import henrykado.gaiablossom.common.block.tileentity.TileEntityMobSpawnerTower;
 
 public class BlockMobSpawnerTower extends BlockMobSpawner {
 
@@ -14,11 +13,8 @@ public class BlockMobSpawnerTower extends BlockMobSpawner {
         this.setHardness(5.0F)
             .setStepSound(soundTypeMetal);
 
-        String name = "towerMobSpawner";
-
-        setBlockName(name);
         setBlockTextureName("mob_spawner");
-        GameRegistry.registerBlock(this, name);
+        ModBlock.registerBlock(this, "towerMobSpawner", false);
 
         setCreativeTab(CreativeTabs.tabAllSearch);
     }

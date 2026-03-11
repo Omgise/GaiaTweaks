@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.event;
+package henrykado.gaiablossom.common.event;
 
 import java.util.Map;
 

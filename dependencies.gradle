@@ -51,8 +51,14 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:primitive-mobs-282415:2649079")
     compileOnly rfg.deobf("curse.maven:atomicstrykers-battle-towers-227877:2231443")
     compileOnly rfg.deobf("curse.maven:dimensional-doors-legacy-404239:4967772")
+    compileOnly rfg.deobf("curse.maven:forbidden-magic-224237:2303822")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:twilightforest:2.7.23:dev")
+    runtimeOnlyNonPublishable("curse.maven:natures-compass-252848:2451823")
+    runtimeOnlyNonPublishable("curse.maven:et-futurum-requiem-441392:5873837")
+    //implementation rfg.deobf("curse.maven:xaeros-minimap-263420:6012805")
 
+    implementation('curse.maven:nbtstructurelib-1388190:7322675')
     implementation('com.github.GTNewHorizons:AppleCore:3.3.8:dev')
 
-    implementation('com.github.GTNewHorizons:Angelica:2.0.0-alpha16:dev')
+    implementation('com.github.GTNewHorizons:Angelica:2.1.1:dev')
 }

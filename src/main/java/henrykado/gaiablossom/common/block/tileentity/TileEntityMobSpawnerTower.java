@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.common.block.tile;
+package henrykado.gaiablossom.common.block.tileentity;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;

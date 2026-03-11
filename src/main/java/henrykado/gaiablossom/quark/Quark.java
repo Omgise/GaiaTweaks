@@ -4,11 +4,11 @@ import static net.minecraft.block.Block.soundTypePiston;
 
 import java.util.ArrayList;
 
+import henrykado.gaiablossom.common.block.ModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 import henrykado.gaiablossom.Config;
-import henrykado.gaiablossom.common.block.ModBlock;
 import henrykado.gaiablossom.quark.tweaks.BetterRecipes;
 import henrykado.gaiablossom.quark.world.UndergroundBiomeGenerator;
 
@@ -20,14 +20,12 @@ public class Quark {
     public static ArrayList<UndergroundBiomeGenerator> undergroundBiomes = new ArrayList<>();
 
     public static void preInit() {
-        icystone = new ModBlock(Material.rock).setHardness(2.0F)
+        icystone = new ModBlock(Material.rock, "icystone").setHardness(2.0F)
             .setResistance(10.0F)
-            .setStepSound(soundTypePiston)
-            .setBlockName("icystone");
-        cobbedstone = new ModBlock(Material.rock).setHardness(2.0F)
+            .setStepSound(soundTypePiston);
+        cobbedstone = new ModBlock(Material.rock, "cobbedstone").setHardness(2.0F)
             .setResistance(10.0F)
-            .setStepSound(soundTypePiston)
-            .setBlockName("cobbedstone");
+            .setStepSound(soundTypePiston);
 
         for (UndergroundBiomeGenerator.UndergroundBiomeData data : Config.undergroundBiomeList) {
             undergroundBiomes.add(
@@ -46,7 +44,7 @@ public class Quark {
         }
     }
 
-    public static void init() {
+    public static void postInit() {
         BetterRecipes.init();
     }
 }

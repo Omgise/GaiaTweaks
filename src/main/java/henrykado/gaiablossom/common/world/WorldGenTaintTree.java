@@ -2,6 +2,8 @@ package henrykado.gaiablossom.common.world;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
@@ -85,7 +87,9 @@ public class WorldGenTaintTree extends WorldGenAbstractTree {
                                 p_76484_3_,
                                 p_76484_4_ + k2,
                                 p_76484_5_,
-                                ModBlock.blockTaintLog,
+                                !Loader.isModLoaded("ForbiddenMagic")
+                                    ? ModBlock.blockTaintLog
+                                    : GameRegistry.findBlock("ForbiddenMagic", "TaintLog"),
                                 2);
                         }
                     }

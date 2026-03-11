@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.common.block.tile;
+package henrykado.gaiablossom.common.block.tileentity;
 
 import java.util.Iterator;
 import java.util.List;

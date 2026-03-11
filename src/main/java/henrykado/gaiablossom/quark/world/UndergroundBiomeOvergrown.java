@@ -10,7 +10,7 @@ public class UndergroundBiomeOvergrown extends BasicUndergroundBiome {
     public static double dirtChance = 0.5;
 
     public UndergroundBiomeOvergrown() {
-        super(Blocks.mossy_cobblestone, Blocks.leaves2, null, 0, 4, 0);
+        super(Blocks.mossy_cobblestone, Blocks.leaves, null, 0, 4, 0);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class UndergroundBiomeOvergrown extends BasicUndergroundBiome {
             }
 
             for (int i = 0; i <= count; i++) {
-                world.setBlock(x, y - i, z, Block.getBlockFromName("log2"));
+                world.setBlock(x, y - i, z, Blocks.log);
             }
 
         }

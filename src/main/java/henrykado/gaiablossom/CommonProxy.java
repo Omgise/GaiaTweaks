@@ -2,8 +2,11 @@ package henrykado.gaiablossom;
 
 import java.util.Arrays;
 
+import henrykado.gaiablossom.common.world.BiomeGenAutumnForest;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.MapGenVillage;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 
 import baubles.api.expanded.BaubleExpandedSlots;
@@ -13,16 +16,16 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import henrykado.gaiablossom.common.block.ModBlock;
 import henrykado.gaiablossom.common.entity.eep.ExtendedPropertiesHandler;
-import henrykado.gaiablossom.event.AnvilEventHandler;
-import henrykado.gaiablossom.event.AppleCoreEventHandler;
-import henrykado.gaiablossom.event.PlayerEventHandler;
-import henrykado.gaiablossom.event.WorldEventHandler;
+import henrykado.gaiablossom.common.event.AnvilEventHandler;
+import henrykado.gaiablossom.common.event.AppleCoreEventHandler;
+import henrykado.gaiablossom.common.event.PlayerEventHandler;
+import henrykado.gaiablossom.common.event.WorldEventHandler;
 import henrykado.gaiablossom.network.GaiaPacketHandler;
 import henrykado.gaiablossom.quark.Quark;
 
 public class CommonProxy {
 
-    // public static Enchantment growth = new EnchantmentGrowth(240, 1);
+    public static BiomeGenBase autumnForest = new BiomeGenAutumnForest(Config.autumnForestBiomeID);
 
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
@@ -61,16 +64,14 @@ public class CommonProxy {
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
-        // ModEntityList.init();
-
-        // AetherAPI.instance().register(new AetherEnchantment());
-
-        // BiomeDictionary.registerBiomeType(biome, BiomeDictionary.Type.FOREST);
-        // BiomeManager.addBiome();
+        if (Config.autumnForest) {
+            BiomeDictionary.registerBiomeType(autumnForest, BiomeDictionary.Type.FOREST);
+            BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(autumnForest, 10));
+        }
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void postInit(FMLPostInitializationEvent event) {
-        Quark.init();
+        Quark.postInit();
     }
 }

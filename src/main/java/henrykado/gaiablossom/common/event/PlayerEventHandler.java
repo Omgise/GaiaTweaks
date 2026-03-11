@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.event;
+package henrykado.gaiablossom.common.event;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +17,7 @@ public class PlayerEventHandler {
             || event.source.isUnblockable()
             || !Config.enableSwordParry) return;
 
-        if ((player.itemInUse.getMaxItemUseDuration() - player.itemInUseCount) <= 3) {
+        if (Config.swordParryWindow == -1 || (player.itemInUse.getMaxItemUseDuration() - player.itemInUseCount) <= Config.swordParryWindow) {
             Entity damagingEntity = event.source.getSourceOfDamage();
 
             if (damagingEntity != null) {

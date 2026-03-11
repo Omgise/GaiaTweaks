@@ -1,17 +1,20 @@
 package henrykado.gaiablossom.common.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import henrykado.gaiablossom.Config;
-import henrykado.gaiablossom.common.block.tile.TileEntityMobSpawnerTower;
+import henrykado.gaiablossom.common.block.tileentity.TileEntityMobSpawnerTower;
+import net.minecraft.block.material.Material;
 
 public class ModBlock extends Block {
 
     public static Block blockTaintLog;
     public static Block blockTowerSpawner;
+    public static Block redLeaves;
+    public static Block orangeLeaves;
+    public static Block deadLeaves;
 
     public static void registerEmBlocks() {
         if (Loader.isModLoaded("Thaumcraft") && Config.taintedTrees) {
@@ -22,17 +25,32 @@ public class ModBlock extends Block {
             blockTowerSpawner = new BlockMobSpawnerTower();
             GameRegistry.registerTileEntity(TileEntityMobSpawnerTower.class, "gaiablossom:towerMobSpawner");
         }
+
+        if (Config.autumnForest) {
+            redLeaves = new BlockModLeaves("autumn_red");
+            orangeLeaves = new BlockModLeaves("autumn_orange");
+            deadLeaves = new BlockDeadLeaves().setBlockName("dead_leaves").setBlockTextureName("dead_leaves");
+        }
     }
 
-    public ModBlock(Material par2Material) {
-        super(par2Material);
+
+    public ModBlock(Material material, String name) {
+        super(material);
+
+        setBlockName(name);
+        GameRegistry.registerBlock(this, name);
     }
 
-    @Override
-    public Block setBlockName(String par1Str) {
-        this.setBlockTextureName("gaiablossom:" + par1Str);
-        GameRegistry.registerBlock(this, par1Str);
 
-        return super.setBlockName(par1Str);
+    public static void registerBlock(Block block, String name, boolean setTextureName) {
+        block.setBlockName(name);
+        GameRegistry.registerBlock(block, name);
+        if (setTextureName) {
+            block.setBlockTextureName("gaiablossom:" + name);
+        }
+    }
+
+    public static void registerBlock(Block block, String name) {
+        registerBlock(block, name, true);
     }
 }

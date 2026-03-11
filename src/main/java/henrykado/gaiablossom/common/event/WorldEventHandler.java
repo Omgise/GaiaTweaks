@@ -1,4 +1,4 @@
-package henrykado.gaiablossom.event;
+package henrykado.gaiablossom.common.event;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;

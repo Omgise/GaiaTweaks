@@ -15,7 +15,7 @@ import henrykado.gaiablossom.client.event.AchievementKeyHandler;
 import henrykado.gaiablossom.client.event.BaubleRenderer;
 import henrykado.gaiablossom.client.gui.AchievementTab;
 import henrykado.gaiablossom.client.render.TileEntityMobSpawnerTowerRenderer;
-import henrykado.gaiablossom.common.block.tile.TileEntityMobSpawnerTower;
+import henrykado.gaiablossom.common.block.tileentity.TileEntityMobSpawnerTower;
 
 public class ClientProxy extends CommonProxy {
 

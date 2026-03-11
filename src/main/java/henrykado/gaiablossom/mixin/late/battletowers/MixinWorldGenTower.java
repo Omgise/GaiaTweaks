@@ -23,7 +23,7 @@ import atomicstryker.battletowers.common.TowerStageItemManager;
 import atomicstryker.battletowers.common.WorldGenHandler;
 import henrykado.gaiablossom.Config;
 import henrykado.gaiablossom.common.block.ModBlock;
-import henrykado.gaiablossom.common.block.tile.TileEntityMobSpawnerTower;
+import henrykado.gaiablossom.common.block.tileentity.TileEntityMobSpawnerTower;
 import henrykado.gaiablossom.util.TowerTypes;
 
 @Mixin(AS_WorldGenTower.class)

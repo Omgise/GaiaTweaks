@@ -1,10 +1,9 @@
-item.recall_potion.name=Recall Potion
-item.gaiablossom:living_jetpack.name=Living Jetpack
-
 tile.icystone.name=Frozen Cobblestone
 tile.cobbedstone.name=Cobbedstone
 tile.log_taintwood.name=Tainted Log
-tile.towerMobSpawner.name=Battle Tower Mob Spawner
+tile.autumn_red.name=Red Oak Leaves
+tile.autumn_orange.name=Orange Oak Leaves
+tile.dead_leaves.name=Dead Leaves
 
 tc.visdiscountGoggles=(in helmet slot)
 
