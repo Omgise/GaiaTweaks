@@ -36,7 +36,7 @@
 dependencies {
     compileOnly rfg.deobf("curse.maven:aether-255308:5875775")
 
-    compileOnly rfg.deobf("curse.maven:thaumcraft-223628:2227552")
+    implementation rfg.deobf("curse.maven:thaumcraft-223628:2227552")
     implementation('com.github.GTNewHorizons:Baubles-Expanded:2.2.2-GTNH:dev')
 
     compileOnly rfg.deobf('curse.maven:railcraft-51195:2299713')
@@ -51,7 +51,7 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:primitive-mobs-282415:2649079")
     compileOnly rfg.deobf("curse.maven:atomicstrykers-battle-towers-227877:2231443")
     compileOnly rfg.deobf("curse.maven:dimensional-doors-legacy-404239:4967772")
-    compileOnly rfg.deobf("curse.maven:forbidden-magic-224237:2303822")
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:forbidden-magic-224237:2303822")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:twilightforest:2.7.23:dev")
     runtimeOnlyNonPublishable("curse.maven:natures-compass-252848:2451823")
     runtimeOnlyNonPublishable("curse.maven:et-futurum-requiem-441392:5873837")

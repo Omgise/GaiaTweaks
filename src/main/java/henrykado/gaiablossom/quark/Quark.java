@@ -20,10 +20,10 @@ public class Quark {
     public static ArrayList<UndergroundBiomeGenerator> undergroundBiomes = new ArrayList<>();
 
     public static void preInit() {
-        icystone = new ModBlock(Material.rock, "icystone").setHardness(2.0F)
+        icystone = new ModBlock(Material.rock).register("icystone").setHardness(2.0F)
             .setResistance(10.0F)
             .setStepSound(soundTypePiston);
-        cobbedstone = new ModBlock(Material.rock, "cobbedstone").setHardness(2.0F)
+        cobbedstone = new ModBlock(Material.rock).register("cobbedstone").setHardness(2.0F)
             .setResistance(10.0F)
             .setStepSound(soundTypePiston);
 

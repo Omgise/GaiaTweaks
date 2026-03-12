@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.relauncher.FMLLaunchHandler;
 import henrykado.gaiablossom.Config;
 import henrykado.gaiablossom.GaiaBlossom;
@@ -75,7 +76,7 @@ public enum Mixins {
         "thaumcraft.MixinGadomancyNodeRenderer"),
     THAUMCRAFT_TAINTED_TREES(Phase.LATE, Side.BOTH, TargetedMod.THAUMCRAFT, () -> Config.taintedTrees,
         "thaumcraft.MixinBiomeGenTaint"),
-    THAUMCRAFT_TAINTWOOD_SPREAD(Phase.LATE, Side.BOTH, TargetedMod.THAUMCRAFT, () -> Config.taintedTrees,
+    THAUMCRAFT_TAINTWOOD_SPREAD(Phase.LATE, Side.BOTH, TargetedMod.THAUMCRAFT, () -> Config.taintedTrees && !Loader.isModLoaded("ForbiddenMagic"),
         "thaumcraft.MixinBlockTaintFibres"),
     THAUMCRAFT_GREATWOOD_BLACKLIST(Phase.LATE, Side.BOTH, TargetedMod.THAUMCRAFT, "thaumcraft.MixinWorldGenGreatwood"),
     THAUMCRAFT_ELEMENTAL_TRIBOW(Phase.LATE, Side.BOTH, TargetedMod.THAUMCRAFT, "thaumcraft.MixinThaumEntityHandler"),

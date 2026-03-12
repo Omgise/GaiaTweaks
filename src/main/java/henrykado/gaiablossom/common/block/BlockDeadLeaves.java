@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockDeadLeaves extends ModBlock {
 
     protected BlockDeadLeaves() {
-        super(Material.leaves, "dead_leaves");
+        super(Material.leaves);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
         this.setCreativeTab(CreativeTabs.tabDecorations);
         this.setHardness(0.1F);

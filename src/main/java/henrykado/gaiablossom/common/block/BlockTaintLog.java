@@ -13,7 +13,7 @@ import thaumcraft.common.lib.CustomSoundType;
 
 public class BlockTaintLog extends BlockRotatedPillar {
 
-    public BlockTaintLog() {
+    public BlockTaintLog(String name) {
         super(Material.wood);
 
         this.setHardness(1.5F);
@@ -21,7 +21,7 @@ public class BlockTaintLog extends BlockRotatedPillar {
         this.setCreativeTab(Thaumcraft.tabTC);
         this.setTickRandomly(true);
 
-        ModBlock.registerBlock(this, "log_taintwood");
+        ModBlock.registerBlock(this, name);
     }
 
     @SideOnly(Side.CLIENT)

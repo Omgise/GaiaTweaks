@@ -243,7 +243,7 @@ public class BlockModLeaves extends BlockLeavesBase implements IShearable {
     public void registerBlockIcons(IIconRegister reg) {
         for (int i = 0; i < 2; ++i) {
             this.icons[i] = reg
-                .registerIcon(GaiaBlossom.MODID + ":" + this.getTextureName() + (i == 1 ? "_opaque" : ""));
+                .registerIcon(this.getTextureName() + (i == 1 ? "_opaque" : ""));
         }
     }
 

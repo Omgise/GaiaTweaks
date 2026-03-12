@@ -25,7 +25,7 @@ import henrykado.gaiablossom.quark.Quark;
 
 public class CommonProxy {
 
-    public static BiomeGenBase autumnForest = new BiomeGenAutumnForest(Config.autumnForestBiomeID);
+    public static BiomeGenBase autumnForest;
 
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
@@ -36,6 +36,7 @@ public class CommonProxy {
 
         // ModItems.init();
         ModBlock.registerEmBlocks();
+        autumnForest = new BiomeGenAutumnForest(Config.autumnForestBiomeID);
 
         if (Loader.isModLoaded("Baubles")) {
             if (Config.gogglesOfRevealingBauble)

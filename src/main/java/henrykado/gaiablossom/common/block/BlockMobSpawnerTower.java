@@ -9,12 +9,12 @@ import henrykado.gaiablossom.common.block.tileentity.TileEntityMobSpawnerTower;
 
 public class BlockMobSpawnerTower extends BlockMobSpawner {
 
-    public BlockMobSpawnerTower() {
+    public BlockMobSpawnerTower(String name, String textureName) {
         this.setHardness(5.0F)
             .setStepSound(soundTypeMetal);
 
         setBlockTextureName("mob_spawner");
-        ModBlock.registerBlock(this, "towerMobSpawner", false);
+        ModBlock.registerBlock(this, name, false);
 
         setCreativeTab(CreativeTabs.tabAllSearch);
     }
