@@ -200,8 +200,11 @@ public class Config {
         scarceMeat = configuration
             .getBoolean("scarceMeat", "hunger", false, "Slower egg drops and cows drop less beef");
 
-        slowerCropGrowth = configuration
-            .getBoolean("slowerCropGrowth", "hunger", false, "Enable to halve the speed crops grow at");
+        slowerCropGrowth = configuration.getBoolean(
+            "slowerCropGrowth",
+            "hunger",
+            false,
+            "Enable to halve the speed crops grow at (Won't work in Garden of Glass worlds)");
 
         healMultiplier = configuration
             .getFloat("healingFoodMultiplier", "hunger", 1.0f, 0.0f, 10.0f, "Requires enableStaminaSystem");
